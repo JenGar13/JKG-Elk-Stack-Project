@@ -146,12 +146,12 @@ In order to use the playbook, you will need to have an Ansible control node alre
 SSH into the control node and follow the steps below:
 
 - Copy the configuration file for filebeat-playbook.yml file to your ansible container.
-(Images/opening_ansible_container.PNG)
+![Image](README/Images/opening_ansible_container.PNG)
 - Update the hosts file to include webservers.
-(Images/hosts_file.PNG)
-(Images/ELK_install.PNG)
+![Image](README/Images/hosts_file.PNG)
+![Image](README/Images/ELK_install.PNG)
 - Run the playbook, and navigate to ELK-VM to check that the installation worked as expected. 
-(Images/opening_ELK_VM.PNG)
+![Image](README/Images/opening_ELK_VM.PNG)
 
 _TODO: Answer the following questions to fill in the blanks:_ 
 - _Which file is the playbook? Where do you copy it?_ **_NOTE:_** The filebeat-playbook.yml
