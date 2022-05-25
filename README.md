@@ -136,9 +136,6 @@ These Beats allow us to collect the following information from each machine:
 
 ### Using the Playbook
 
-<details>
-<summary>View filebeat-playbook.</summary>
-<br>
 ```
 ---
 - name: Installing and Launch Filebeat
@@ -177,7 +174,6 @@ These Beats allow us to collect the following information from each machine:
       enabled: yes
 
 ```
-</details>
 
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
