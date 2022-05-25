@@ -73,9 +73,11 @@ _What is the advantage of a jump box?_
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs.
 
 _What does Filebeat watch for?_
+
 Filebeat centralizes logs and files and forwards them while monitoring locations specified by the user, collects log events, and forwards them either to Elasticsearch or Logstash for indexing.
 
 _What does Metricbeat record?_
+
 Metricbeat collects metrics from your systems and services and then ships them to the output that you specify, such as Elasticsearch or Logstash. it also helps you monitor your servers by collecting metrics from the system and services running on the server.
 
 The configuration details of each machine may be found below.
