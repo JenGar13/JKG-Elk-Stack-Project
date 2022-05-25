@@ -135,6 +135,7 @@ These Beats allow us to collect the following information from each machine:
 - Metricbeat is collecting metrics and statistics.
 
 ### Using the Playbook
+
 <details>
 <summary>View filebeat-playbook.</summary>
 <br>
@@ -177,6 +178,7 @@ These Beats allow us to collect the following information from each machine:
 
 ```
 </details>
+
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
