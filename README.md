@@ -60,7 +60,7 @@ _What aspect of security do load balancers protect?_
 - Allows for flexibility and ensures efficency while ensuring that no one server is overloaded.
 - There are 4 types of load balancers which include the following: Application Load Balancer, Network Load Balancer, Classic Load Balancer, Gateway Load Balancers.
 
-![Image](README/Images/ADDLOADBALANCER.PNG) ***edit them
+![Image](README/Images/Load_Balancer_View.PNG)
 
 _What is the advantage of a jump box?_
 - Manages machines in other security groups and is a great tool that increases security.
@@ -68,7 +68,7 @@ _What is the advantage of a jump box?_
 - Used as a jumping point or gateway into another machine 
 - Acts as a buffer before any other network traffic is allowed. 
 
-![Image](README/Images/ADDJUMPBOX.PNG) ***edit them
+![Image](README/Images/Jump_Box_View.PNG)
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs.
 
