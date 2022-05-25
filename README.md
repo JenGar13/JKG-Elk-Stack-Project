@@ -54,11 +54,13 @@ _See playbook file below._
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 
-_TODO: What aspect of security do load balancers protect?_
+_What aspect of security do load balancers protect?_
 - Load balancing ensures that the application will be highly secure, in addition to restricting traffic to the network. 
 - Load balancers allow for prevention of DDoS attacks and assist organizations in shifting attack traffic from corporate servers and into public cloud providers. 
 - Allows for flexibility and ensures efficency while ensuring that no one server is overloaded.
 - There are 4 types of load balancers which include the following: Application Load Balancer, Network Load Balancer, Classic Load Balancer, Gateway Load Balancers.
+
+![Image](README/Images/ADDLOADBALANCER.PNG) ***edit them
 
 _What is the advantage of a jump box?_
 - Manages machines in other security groups and is a great tool that increases security.
@@ -66,13 +68,14 @@ _What is the advantage of a jump box?_
 - Used as a jumping point or gateway into another machine 
 - Acts as a buffer before any other network traffic is allowed. 
 
+![Image](README/Images/ADDJUMPBOX.PNG) ***edit them
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs.
 
-_TODO: What does Filebeat watch for?_
+_What does Filebeat watch for?_
 Filebeat centralizes logs and files and forwards them while monitoring locations specified by the user, collects log events, and forwards them either to Elasticsearch or Logstash for indexing.
 
-_TODO: What does Metricbeat record?_
+_What does Metricbeat record?_
 Metricbeat collects metrics from your systems and services and then ships them to the output that you specify, such as Elasticsearch or Logstash. it also helps you monitor your servers by collecting metrics from the system and services running on the server.
 
 The configuration details of each machine may be found below.
@@ -121,12 +124,10 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_ 
 - Web-1: 10.1.0.5 ; DVWA-1
 - Web-2: 10.1.0.6 ; DVWA-2
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
 - Filebeat
 - Metricbeat
 
