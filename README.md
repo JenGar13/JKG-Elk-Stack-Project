@@ -65,9 +65,9 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------------------|----------------------|----------------------|----------------------|
-| Jump-Box-Provisioner | Yes                  | 20.78.11.74          |
-| ELK-WM               | Yes                  | 20.213.8.197         |
-| Web-1                | No                   | 10.1.0.5             |
+| Jump-Box-Provisioner | Yes                  | 20.78.11.74          |                      |
+| ELK-WM               | Yes                  | 20.213.8.197         |                      |
+| Web-1                | No                   | 10.1.0.5             |                      |
 | Web-2                | No                   | 10.1.0.6             |                      |
 
 ### Elk Configuration
@@ -146,7 +146,7 @@ In order to use the playbook, you will need to have an Ansible control node alre
 ```
 SSH into the control node and follow the steps below:
 
-- Copy the configuration file for `filebeat-playbook.yml` file to your ansible container.
+- Copy the configuration file for filebeat-playbook.yml file to your ansible container.
 (Images/opening_ansible_container.PNG)
 - Update the hosts file to include webservers.
 (Images/hosts_file.PNG)
