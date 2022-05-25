@@ -60,7 +60,7 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 - Allows for flexibility and ensures efficency while ensuring that no one server is overloaded.
 - There are 4 types of load balancers which include the following: Application Load Balancer, Network Load Balancer, Classic Load Balancer, Gateway Load Balancers.
 
-- _TODO: What is the advantage of a jump box?_
+- _What is the advantage of a jump box?_
 - Manages machines in other security groups and is a great tool that increases security.
 - Allows for admin access before connecting to another machine.
 - Used as a jumping point or gateway into another machine 
