@@ -146,7 +146,7 @@ In order to use the playbook, you will need to have an Ansible control node alre
 ```
 SSH into the control node and follow the steps below:
 
-- Copy the configuration file for filebeat-playbook.yml file to your ansible container.
+- Copy the configuration file for `filebeat-playbook.yml` file to your ansible container.
 (Images/opening_ansible_container.PNG)
 - Update the hosts file to include webservers.
 (Images/hosts_file.PNG)
