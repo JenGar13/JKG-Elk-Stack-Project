@@ -92,12 +92,9 @@ The configuration details of each machine may be found below.
 
 ### Access Policies
 
-The machines on the internal network are not exposed to the public Internet. 
+The machines on the internal network are not exposed to the public Internet. Only the jump-box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses: 
 
-Only the jump-box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-
-Machines within the network can only be accessed by SSH key via the Jump Box via 20.78.11.74.
-
+_Machines within the network can only be accessed by SSH key via the Jump Box via 20.78.11.74._
 
 A summary of the access policies in place can be found in the table below.
 
@@ -110,7 +107,7 @@ A summary of the access policies in place can be found in the table below.
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because ansible doesn't take any coding skilsl to use, it's a very powerful tool that allows for complexity , but is also very flexible. Ansible is very secure and reliable because it's an agentless configuration that uses SSH and transfers the bare minimum of data to machines that it manages.
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because ansible doesn't take any coding skills to use, it's a very powerful tool that allows for complexity , but is also very flexible. Ansible is very secure and reliable because it's an agentless configuration that uses SSH and transfers the bare minimum of data to machines that it manages.
 
 The playbook implements the following tasks:
 - Create the virtual network with peer conenctions from the pervious Azure setup.
@@ -119,10 +116,15 @@ The playbook implements the following tasks:
 - Download and configure the container by updating the ansible host file.
 - After the docker is installed, the container needs to be downloaded and then exposed
 
+The below screenshot shows the setup of the docker container below.
+
+![Image](README/Images/Setting_Up_Docker_Container.PNG)
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
 ![Image](README/Images/docker_ps_outlook.PNG)
+
+
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -132,6 +134,11 @@ This ELK server is configured to monitor the following machines:
 We have installed the following Beats on these machines:
 - Filebeat
 - Metricbeat
+
+_Filebeat Installation_
+
+
+
 
 These Beats allow us to collect the following information from each machine: 
 - Filebeat is collecting log events.
@@ -182,17 +189,33 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 
+- Run the following command.
+```
+curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.6.1-darwin-x86_64.tar.gz
+tar xzvf filebeat-7.6.1-darwin-x86_64.tar.gz
+cd filebeat-7.6.1-darwin-x86_64/
+
+```
+
+
 - Copy the configuration file for filebeat-playbook.yml file to your ansible container.
+- 
 ![Image](README/Images/opening_ansible_container.PNG)
 
 - Update the hosts file to include webservers.
+- 
 ![Image](README/Images/hosts_file.PNG)
 
 - Verify that that ELK-VM is accesable.
+- 
 ![Image](README/Images/ELK_install.PNG)
 
 - Run the playbook, and navigate to ELK-VM to check that the installation worked as expected.
+- 
 ![Image](README/Images/opening_ELK_VM.PNG)
 
-Check http://Your-ELK-VM-PUBLICK-IP:5601/app/kibana
+Check http://Your-ELK-VM-PUBLIC-IP:5601/app/kibana. You will replace Your-ELK-VM-PUBLIC with the public Ip of your ELk VM. You'll see the following page.
+
 ![Image](README/Images/ELK_kibana.PNG)
+
+
