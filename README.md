@@ -6,7 +6,7 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the YAML file may be used to install only certain pieces of it, such as Filebeat.
 
-  - _TODO: Enter the playbook file._
+_See playbook file below._
 
 ``` 
 ---
@@ -181,14 +181,15 @@ SSH into the control node and follow the steps below:
 
 - Copy the configuration file for filebeat-playbook.yml file to your ansible container.
 ![Image](README/Images/opening_ansible_container.PNG)
+
 - Update the hosts file to include webservers.
 ![Image](README/Images/hosts_file.PNG)
+
+- Verify that that ELK-VM is accesable.
 ![Image](README/Images/ELK_install.PNG)
-- Run the playbook, and navigate to ELK-VM to check that the installation worked as expected. 
+
+- Run the playbook, and navigate to ELK-VM to check that the installation worked as expected.
 ![Image](README/Images/opening_ELK_VM.PNG)
 
-_TODO: Answer the following questions to fill in the blanks:_ 
-- _Which file is the playbook? Where do you copy it?_ **_NOTE:_** The filebeat-playbook.yml
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_ **_NOTE:_** hosts_file
-- _Which URL do you navigate to in order to check that the ELK server is running? **_NOTE:_** http://20.213.8.197:5601/app/kibana 
-(Images/ELK_kibana.PNG)
+Check http://Your-ELK-VM-PUBLICK-IP:5601/app/kibana
+![Image](README/Images/ELK_kibana.PNG)
