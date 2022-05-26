@@ -30,7 +30,7 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 _What aspect of security do load balancers protect?_
 - Load balancing ensures that the application will be highly secure, in addition to restricting traffic to the network. 
 - Load balancers allow for prevention of DDoS attacks and assist organizations in shifting attack traffic from corporate servers and into public cloud providers. 
-- Allows for flexibility and ensures efficency while ensuring that no one server is overloaded.
+- Allows for flexibility and ensures efficiency while ensuring that no one server is overloaded.
 - There are 4 types of load balancers which include the following: Application Load Balancer, Network Load Balancer, Classic Load Balancer, Gateway Load Balancers.
 
 ![Image](README/Images/Load_Balancer_View.PNG)
