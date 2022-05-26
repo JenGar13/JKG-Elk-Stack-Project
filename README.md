@@ -6,9 +6,12 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the YAML file may be used to install only certain pieces of it, such as Filebeat.
 
-_See playbook file below._
+_See playbook files below._
 
-[Filebeat playbook](Ansible/filebeat-playbook.yml)
+- [Filebeat Configuration](Ansible/filebeat-config.yml)
+- [Filebeat Playbook](Ansible/filebeat-playbook.yml)
+- [Metricbeat Configuration](Ansible/metricbeat-config.yml)
+- [ELK_Stack_Install](Ansible/install-elk.yml)
 
  This document contains the following details:
 - Description of the Topology
@@ -18,7 +21,6 @@ _See playbook file below._
   - Machines Being Monitored
 - How to Use the Ansible Build
 
-
 ### Description of the Topology
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
@@ -27,7 +29,7 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 _What aspect of security do load balancers protect?_
 - Load balancing ensures that the application will be highly secure, in addition to restricting traffic to the network. 
 - Load balancers allow for prevention of DDoS attacks and assist organizations in shifting attack traffic from corporate servers and into public cloud providers. 
-- Allows for flexibility and ensures efficency while ensuring that no one server is overloaded.
+- Allows for flexibility and ensures efficiency while ensuring that no one server is overloaded.
 - There are 4 types of load balancers which include the following: Application Load Balancer, Network Load Balancer, Classic Load Balancer, Gateway Load Balancers.
 
 ![Image](README/Images/Load_Balancer_View.PNG)
@@ -121,13 +123,6 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-
-- Run the following command.
-```
-ssh RedAdmin@20.78.11.74
-
-```
-
 
 - Copy the configuration file for filebeat-playbook.yml file to your ansible container.
 
