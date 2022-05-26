@@ -163,6 +163,12 @@ sudo docker exec -it ansible_container /bin/bash
 
 Check http://Your-ELK-VM-PUBLIC-IP:5601/app/kibana. You will replace Your-ELK-VM-PUBLIC with the public Ip of your ELk VM. You'll see the following page.
 
+You'll then navigate to the following options:
+- Observability << Logs << Add Log Data. Then select elasticsearch logs and choose the appropriate OS for your system.
+
+
 ![Image](README/Images/ELK_kibana.PNG)
+
+
 
 
