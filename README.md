@@ -11,7 +11,7 @@ _See playbook files below._
 - [Filebeat Configuration](Ansible/filebeat-config.yml)
 - [Filebeat Playbook](Ansible/filebeat-playbook.yml)
 - [Metricbeat Configuration](Ansible/metricbeat-config.yml)
-- [ELK_Stack_Install](Ansible/install-elk.yml)
+- [ELK Stack Install](Ansible/install-elk.yml)
 
  This document contains the following details:
 - Description of the Topology
