@@ -1,0 +1,6 @@
+output.elasticsearch:
+  hosts: ["10.2.0.4:9200"]
+  username: "elastic"
+ word"
+setup.kibana:
+  host: "http://20.213.8.197:5601/app/kibana"
