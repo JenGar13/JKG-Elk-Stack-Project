@@ -205,15 +205,15 @@ cd filebeat-7.6.1-darwin-x86_64/
 ![Image](README/Images/opening_ansible_container.PNG)
 
 - Update the hosts file to include webservers.
-- 
+
 ![Image](README/Images/hosts_file.PNG)
 
 - Verify that that ELK-VM is accesable.
-- 
+
 ![Image](README/Images/ELK_install.PNG)
 
 - Run the playbook, and navigate to ELK-VM to check that the installation worked as expected.
-- 
+
 ![Image](README/Images/opening_ELK_VM.PNG)
 
 Check http://Your-ELK-VM-PUBLIC-IP:5601/app/kibana. You will replace Your-ELK-VM-PUBLIC with the public Ip of your ELk VM. You'll see the following page.
