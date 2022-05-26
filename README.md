@@ -199,7 +199,7 @@ cd filebeat-7.6.1-darwin-x86_64/
 
 
 - Copy the configuration file for filebeat-playbook.yml file to your ansible container.
-- 
+
 ![Image](README/Images/opening_ansible_container.PNG)
 
 - Update the hosts file to include webservers.
