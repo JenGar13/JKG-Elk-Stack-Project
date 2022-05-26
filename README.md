@@ -140,8 +140,10 @@ This ELK server is configured to monitor the following machines:
 
 _File for configureing the web hosts._
 
-Markup :  `code(
 
+<details>
+<summary>my-playbook.yml file?</summary>
+<br>
 ---
  - name: Config DVWA
    hosts: webservers
@@ -170,9 +172,8 @@ Markup :  `code(
        image: cyberxsecurity/dvwa
        state: started
        restart_policy: always
-       published_ports: 80:80
-       
-       )`
+       published_ports: 80:80.
+</details>
 
 
 ![Image](README/Images/DVWM_Setup.PNG)
