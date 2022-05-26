@@ -52,7 +52,7 @@ _What does Metricbeat record?_
 
 Metricbeat collects metrics from your systems and services and then ships them to the output that you specify, such as Elasticsearch or Logstash. it also helps you monitor your servers by collecting metrics from the system and services running on the server.
 
-The configuration details of each machine may be found below.
+The configuration details of each machine may be found below. The country regions have been listed as naming conventions on this project to make the virtual machines, virtual networks, load balancers, and network security groups easier to identify. 
 
 | Name     | Function | IP Address | Operating System |
 |------------------------|---------------|---------------------|------------------|
@@ -126,13 +126,32 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 
+```
+ssh $ ssh RedAdmin@<Jump-Box-Provisioner-Japan-IP>
+
+```
+- We'll need to accees the docekr container so that we can move forward with configuration of our Elk Stack. Run the following commands:
+```
+sudo docker ps -a
+
+sudo docker start ansible_container
+
+sudo docker exec -it ansible_container /bin/bash
+
+```
+- After the above commands you will then have access the your ansible container. You'll then be able to create your congif and playbook files to move forward with creation of your Elk Stack.
+
 - Copy the configuration file for filebeat-playbook.yml file to your ansible container.
 
 ![Image](README/Images/opening_ansible_container.PNG)
 
-- Update the hosts file to include webservers.
+- Update the hosts file to include webservers. These are the virtual machines that will host the DVWA containers. Each one can be accessed via your ansible container
 
 ![Image](README/Images/hosts_file.PNG)
+
+![Image](README/Images/WebOne_SSH.PNG)
+
+![Image](README/Images/WebOne_2_SSH.PNG)
 
 - Verify that that ELK-VM is accesable.
 
