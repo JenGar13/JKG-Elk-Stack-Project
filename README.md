@@ -8,7 +8,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
 _See playbook file below._
 
-[Filebeat playbook](filebeat-playbook.yml)
+[Filebeat playbook](Ansible/filebeat-playbook.yml)
 
  This document contains the following details:
 - Description of the Topology
