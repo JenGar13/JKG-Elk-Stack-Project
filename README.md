@@ -101,39 +101,6 @@ This ELK server is configured to monitor the following machines:
 - Web-1: 10.1.0.5 ; DVWA-1
 - Web-2: 10.1.0.6 ; DVWA-2
 
-_File for configureing the web hosts._
-
-```
-  ---
- - name: Config DVWA
-   hosts: webservers
-   become: true
-   tasks:
-
-   - name: Install docker.io
-     apt:
-       update_cache: yes
-       name: docker.io
-       state: present
-
-   - name: Install pip3
-     apt:
-       name: python3-pip
-       state: present
-
-   - name: Install Python Docker Module
-     pip:
-       name: docker
-       state: present
-
-   - name: download and launch a docker web container
-     docker_container:
-       name: dvwa
-       image: cyberxsecurity/dvwa
-       state: started
-       restart_policy: always
-       published_ports: 80:80
-  ```
 
 ![Image](README/Images/DVWM_Setup.PNG)
 
