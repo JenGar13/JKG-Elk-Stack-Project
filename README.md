@@ -11,7 +11,7 @@ _See playbook files below._
 - [Filebeat Configuration](Ansible/filebeat-config.yml)
 - [Filebeat Playbook](Ansible/filebeat-playbook.yml)
 - [Metricbeat Configuration](Ansible/metricbeat-config.yml)
-- [ELK_Stack_Install](Ansible/install-elk.yml)
+- [ELK Stack Install](Ansible/install-elk.yml)
 
  This document contains the following details:
 - Description of the Topology
@@ -78,6 +78,8 @@ A summary of the access policies in place can be found in the table below.
 | Web-2                | No                  | 10.1.0.6             |   |   |
 
 ### Elk Configuration
+
+![Image](README/Images/Elk-VM.PNG)
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because ansible doesn't take any coding skills to use, it's a very powerful tool that allows for complexity , but is also very flexible. Ansible is very secure and reliable because it's an agentless configuration that uses SSH and transfers the bare minimum of data to machines that it manages.
 
