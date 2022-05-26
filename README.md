@@ -122,7 +122,7 @@ These Beats allow us to collect the following information from each machine:
 
 ### Using the Playbook
 
-In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
+In order to use the playbook, the user will need to have an Ansible control node already configured. Assuming they have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
 
@@ -139,7 +139,7 @@ sudo docker start ansible_container
 sudo docker exec -it ansible_container /bin/bash
 
 ```
-- After the above commands you will then have access the your ansible container. You'll then be able to create your congif and playbook files to move forward with creation of your Elk Stack.
+- After the above commands the user will then have access the ansible container. They'll then be able to create their congif and playbook files to move forward with creation of your Elk Stack.
 
 - Copy the configuration file for filebeat-playbook.yml file to your ansible container.
 
@@ -163,12 +163,13 @@ sudo docker exec -it ansible_container /bin/bash
 
 Check http://Your-ELK-VM-PUBLIC-IP:5601/app/kibana. You will replace Your-ELK-VM-PUBLIC with the public Ip of your ELk VM. You'll see the following page.
 
-You'll then navigate to the following options:
-- Observability << Logs << Add Log Data. Then select elasticsearch logs and choose the appropriate OS for your system.
+The user will then navigate to the following options:
+- Observability << Logs << _Add Log Data_. Then select elasticsearch logs and choose the appropriate OS for their machine system.
+- Do the same for Metrics by _Adding Metric data_.
+- The versatile options allow the user to log data and check the metrics of the traffic throughout their virtual machines. 
 
 
 ![Image](README/Images/ELK_kibana.PNG)
-
 
 
 
