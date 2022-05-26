@@ -144,7 +144,8 @@ _File for configureing the web hosts._
 <details>
 <summary>my-playbook.yml file?</summary>
 <br>
----
+```
+  ---
  - name: Config DVWA
    hosts: webservers
    become: true
@@ -172,7 +173,8 @@ _File for configureing the web hosts._
        image: cyberxsecurity/dvwa
        state: started
        restart_policy: always
-       published_ports: 80:80.
+       published_ports: 80:80
+  ```
 </details>
 
 
