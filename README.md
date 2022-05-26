@@ -8,38 +8,45 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
 _See playbook file below._
 
-``` 
----
- - name: Config DVWA
-   hosts: webservers
-   become: true
-   tasks:
-
-   - name: Install docker.io
-     apt:
-       update_cache: yes
-       name: docker.io
-       state: present
-
-   - name: Install pip3
-     apt:
-       name: python3-pip
-       state: present
-
-   - name: Install Python Docker Module
-     pip:
-       name: docker
-       state: present
-
-   - name: download and launch a docker web container
-     docker_container:
-       name: dvwa
-       image: cyberxsecurity/dvwa
-       state: started
-       restart_policy: always
-       published_ports: 80:80
 ```
- 
+---
+- name: Installing and Launch Filebeat
+  hosts: webservers
+  become: yes
+  tasks:
+    # Use command module
+  - name: Download filebeat .deb file
+    command: curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.6.1-amd64.>
+    # Use command module
+  - name: Install filebeat .deb
+    command: dpkg -i filebeat-7.6.1-amd64.deb
+
+    # Use copy module
+  - name: Drop in filebeat.yml
+    copy:
+      src: /etc/ansible/files/filebeat-config.yml
+      dest: /etc/filebeat/filebeat.yml
+
+    # Use command module
+  - name: Enable and Configure System Module
+    command: filebeat modules enable system
+
+    # Use command module
+  - name: Setup filebeat
+    command: filebeat setup
+
+    # Use command module
+  - name: Start filebeat service
+    command: service filebeat start
+
+    # Use systemd module
+  - name: Enable service filebeat on boot
+    systemd:
+      name: filebeat
+      enabled: yes
+
+```
+
  This document contains the following details:
 - Description of the Topology
 - Access Policies
@@ -131,6 +138,39 @@ This ELK server is configured to monitor the following machines:
 - Web-1: 10.1.0.5 ; DVWA-1
 - Web-2: 10.1.0.6 ; DVWA-2
 
+_File for configureing the web hosts._
+
+Markup :  `code(---
+ - name: Config DVWA
+   hosts: webservers
+   become: true
+   tasks:
+
+   - name: Install docker.io
+     apt:
+       update_cache: yes
+       name: docker.io
+       state: present
+
+   - name: Install pip3
+     apt:
+       name: python3-pip
+       state: present
+
+   - name: Install Python Docker Module
+     pip:
+       name: docker
+       state: present
+
+   - name: download and launch a docker web container
+     docker_container:
+       name: dvwa
+       image: cyberxsecurity/dvwa
+       state: started
+       restart_policy: always
+       published_ports: 80:80)`
+
+
 ![Image](README/Images/DVWM_Setup.PNG)
 
 We have installed the following Beats on these machines:
@@ -139,8 +179,7 @@ We have installed the following Beats on these machines:
 
 _Filebeat Installation_
 
-
-
+The installation involves a string of commands along with execution of the playbook.
 
 These Beats allow us to collect the following information from each machine: 
 - Filebeat is collecting log events.
@@ -148,54 +187,13 @@ These Beats allow us to collect the following information from each machine:
 
 ### Using the Playbook
 
-```
----
-- name: Installing and Launch Filebeat
-  hosts: webservers
-  become: yes
-  tasks:
-    # Use command module
-  - name: Download filebeat .deb file
-    command: curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.6.1-amd64.>
-    # Use command module
-  - name: Install filebeat .deb
-    command: dpkg -i filebeat-7.6.1-amd64.deb
-
-    # Use copy module
-  - name: Drop in filebeat.yml
-    copy:
-      src: /etc/ansible/files/filebeat-config.yml
-      dest: /etc/filebeat/filebeat.yml
-
-    # Use command module
-  - name: Enable and Configure System Module
-    command: filebeat modules enable system
-
-    # Use command module
-  - name: Setup filebeat
-    command: filebeat setup
-
-    # Use command module
-  - name: Start filebeat service
-    command: service filebeat start
-
-    # Use systemd module
-  - name: Enable service filebeat on boot
-    systemd:
-      name: filebeat
-      enabled: yes
-
-```
-
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
 
 - Run the following command.
 ```
-curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.6.1-darwin-x86_64.tar.gz
-tar xzvf filebeat-7.6.1-darwin-x86_64.tar.gz
-cd filebeat-7.6.1-darwin-x86_64/
+ssh RedAdmin@20.78.11.74
 
 ```
 
