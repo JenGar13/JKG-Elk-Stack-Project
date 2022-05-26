@@ -79,6 +79,8 @@ A summary of the access policies in place can be found in the table below.
 
 ### Elk Configuration
 
+![Image](README/Images/Elk-VM.PNG)
+
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because ansible doesn't take any coding skills to use, it's a very powerful tool that allows for complexity , but is also very flexible. Ansible is very secure and reliable because it's an agentless configuration that uses SSH and transfers the bare minimum of data to machines that it manages.
 
 The playbook implements the following tasks:
